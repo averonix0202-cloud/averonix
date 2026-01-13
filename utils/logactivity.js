@@ -1,4 +1,4 @@
-import ActivityLog from "../models/ActivityLog.js";
+import ActivityLog from "../models/activitylog.js";
 
 export const logActivity = async ({
   userId,
@@ -17,3 +17,4 @@ export const logActivity = async ({
     console.error("Activity log failed:", err.message);
   }
 };
+
