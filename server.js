@@ -2,14 +2,14 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import router from "./routes/projectRoutes.js";
-import activityRoutes from "./routes/activityRoute.js";
-import supportRoutes from "./routes/supportRoutes.js";
+import router from "./routes/projectroutes.js";
+import activityRoutes from "./routes/activityroute.js";
+import supportRoutes from "./routes/supportroutes.js";
 import adminRoutes from "./routes/admin.routes.js";
 
 dotenv.config();
 
-import authRoutes from "./routes/authRoutes.js";
+import authRoutes from "./routes/authroutes.js";
 
 const app = express();
 app.use(cors());
@@ -27,3 +27,4 @@ app.use("/api/support", supportRoutes);
 app.use("/api/admin", adminRoutes);
 
 app.listen(5000, () => console.log("Server running on port 5000"));
+
