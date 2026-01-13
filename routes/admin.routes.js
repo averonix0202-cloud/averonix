@@ -1,8 +1,8 @@
 // routes/admin.routes.js
 import express from "express";
 import Project from "../models/project.js";
-import User from "../models/User.js";
-import SupportTicket from "../models/SupportTicket.js";
+import User from "../models/user.js";
+import SupportTicket from "../models/supportticket.js";
 
 const router = express.Router();
 
@@ -131,3 +131,4 @@ router.get("/support-tickets", async (req, res) => {
 });
 
 export default router;
+
