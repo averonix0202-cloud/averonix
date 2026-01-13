@@ -2,8 +2,8 @@ import express from "express";
 const supportRoutes = express.Router();
 
 import authMiddleware from "../middleware/auth.js";
-import SupportTicket from "../models/SupportTicket.js";
-import { logActivity } from "../utils/logActivity.js";
+import SupportTicket from "../models/supportticket.js";
+import { logActivity } from "../utils/logactivity.js";
 
 // CREATE support ticket
 supportRoutes.post("/", authMiddleware, async (req, res) => {
@@ -53,3 +53,4 @@ supportRoutes.get("/", authMiddleware, async (req, res) => {
 });
 
 export default supportRoutes;
+
