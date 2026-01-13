@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
 import authMiddleware from "../middleware/auth.js";
-import User from "../models/User.js";
+import User from "../models/user.js";
 import bcrypt from "bcryptjs";
 
 import { register, login } from "../controllers/authcontroller.js";
@@ -59,3 +59,4 @@ router.put("/change-password", authMiddleware, async (req, res) => {
 });
 
 export default router;
+
