@@ -2,7 +2,7 @@ import express from "express";
 const activityRouter = express.Router();
 
 import authMiddleware from "../middleware/auth.js";
-import ActivityLog from "../models/ActivityLog.js";
+import ActivityLog from "../models/activitylog.js";
 
 // GET user's activity logs
 activityRouter.get("/", authMiddleware, async (req, res) => {
@@ -21,3 +21,4 @@ activityRouter.get("/", authMiddleware, async (req, res) => {
 });
 
 export default activityRouter;
+
