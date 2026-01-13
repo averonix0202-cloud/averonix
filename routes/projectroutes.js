@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router();
 import authMiddleware from "../middleware/auth.js";
 import Project from "../models/project.js";
-import { logActivity } from "../utils/logActivity.js";
+import { logActivity } from "../utils/logactivity.js";
 
 // GET all projects for client
 router.get("/client", authMiddleware, async (req, res) => {
@@ -111,3 +111,4 @@ router.post("/", authMiddleware, async (req, res) => {
 });
 
 export default router;
+
