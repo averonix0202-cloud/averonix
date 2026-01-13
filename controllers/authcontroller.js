@@ -1,4 +1,4 @@
-import User from "../models/User.js";
+import User from "../models/user.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { logActivity } from "../utils/logActivity.js";
@@ -71,3 +71,4 @@ const login = async (req, res) => {
 };
 
 export { login, register };
+
