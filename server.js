@@ -28,6 +28,12 @@ app.use(
 
 app.use(express.json());
 
+// ✅ Light health route (NO DB, NO AUTH)
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
@@ -40,6 +46,7 @@ app.use("/api/support", supportRoutes);
 app.use("/api/admin", adminRoutes);
 
 app.listen(5000, () => console.log("Server running on port 5000"));
+
 
 
 
