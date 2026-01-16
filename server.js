@@ -12,12 +12,18 @@ dotenv.config();
 import authRoutes from "./routes/authroutes.js";
 
 const app = express();
-app.use(cors({
-  origin: "https://www.averonix.in",
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
+app.use(
+  cors({
+    origin: [
+      "https://averonix.in",
+      "https://www.averonix.in"
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  })
+);
+
 
 
 app.use(express.json());
@@ -34,6 +40,7 @@ app.use("/api/support", supportRoutes);
 app.use("/api/admin", adminRoutes);
 
 app.listen(5000, () => console.log("Server running on port 5000"));
+
 
 
 
