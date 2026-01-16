@@ -12,17 +12,14 @@ dotenv.config();
 import authRoutes from "./routes/authroutes.js";
 
 const app = express();
-app.use(
-  cors({
-    origin: "https://www.averonix.in",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: "https://www.averonix.in",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
-/* ✅ HANDLE PREFLIGHT */
-app.options("*", cors());
+
 app.use(express.json());
 
 mongoose
@@ -37,5 +34,6 @@ app.use("/api/support", supportRoutes);
 app.use("/api/admin", adminRoutes);
 
 app.listen(5000, () => console.log("Server running on port 5000"));
+
 
 
